@@ -1,13 +1,54 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.library{
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.book{
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.bookAuthor{
+  grid-column: 1 / 3;
+}
+.bookPages{
+  grid-column: 1 / 3;
+}
+.bookIsReadBtn{
+  grid-column: 1 / 3;
+  height: 50px;
+  background-color: green;
+}
+
+.isReadFalse{
+  background-color: orange;
+}
+.deleteBookBtn{
+  grid-column: 1 / 3;
+  height: 50px;
+  background-color: red;
+}
+.priorityContainer{
+  display: flex;
+  justify-self: flex-end;
+}
+.priorityBox{
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+}
+.pB1Active{
+  background-color: red;
+}
+.pB2Active{
+  background-color: red;
+}
+.pB3Active{
+  background-color: red;
+}
+.true{
+  background-color: green;
+}
+.false{
+  background-color:red ;
 }
