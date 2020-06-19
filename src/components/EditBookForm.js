@@ -1,5 +1,4 @@
 import React from "react";
-import PriorityBox from "./PriorityBox";
 function EditBookForm(props) {
   const toggleReadStatus = (e) => {
     e.target.value = props.book.isRead === "true" ? "false" : "true";
@@ -21,7 +20,6 @@ function EditBookForm(props) {
         value={props.book.title}
         onChange={handleChange}
       />
-      <PriorityBox priority={props.book.priority} />
       <input
         name="author"
         className="bookAuthor"
@@ -43,14 +41,16 @@ function EditBookForm(props) {
             ? "bookIsReadBtn "
             : "bookIsReadBtn isReadFalse"
         }
-      ></button>
+      >
+        {props.book.isRead === "true" ? "Read" : "Not Read"}
+      </button>
       <button
         className="deleteBookBtn"
         onClick={() => {
           props.deleteBook(props.index);
         }}
       >
-        Delete!
+        X
       </button>
     </li>
   );

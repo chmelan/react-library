@@ -1,10 +1,8 @@
 import React from "react";
-import PriorityBox from "./PriorityBox";
 function Book(props) {
   return (
     <li className="book">
-      <h2>{props.book.title}</h2>
-      <PriorityBox priority={props.book.priority} />
+      <h2 className="bookTitle">{props.book.title}</h2>
       <h3 className="bookAuthor">By: {props.book.author}</h3>
       <h3 className="bookPages">{props.book.pages} pgs</h3>
       <button
@@ -13,7 +11,9 @@ function Book(props) {
             ? "bookIsReadBtn isReadTrue"
             : "bookIsReadBtn isReadFalse"
         }
-      ></button>
+      >
+        {props.book.isRead === "true" ? "Read" : "Not Read"}
+      </button>
     </li>
   );
 }

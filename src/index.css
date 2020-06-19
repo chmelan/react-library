@@ -1,21 +1,60 @@
+body{
+  font-family: Arial, Helvetica, sans-serif
+}
+
+header {
+    font-size: 40px;
+    display:flex;
+    justify-content:flex-end;
+    box-shadow: 3px 3px 26px -4px rgba(0,0,0,0.75);
+    }
+.headerTitle{
+  margin-right: auto;
+  margin-left: auto;
+}
+.headerAddBook, .headerEditBook{
+  background-color: tomato;
+}
+.headerAddBook:hover, .headerEditBook:hover{
+  color: tomato;
+  border: 2px solid tomato;
+  background-color: white;
+}
+
 .library{
-  display: grid;
-  grid-template-columns: 300px 300px 300px;
+  display: flex;
+  flex-wrap: wrap;
+  transition: 0.2s;
 }
 
 .book{
-  border: 1px solid black;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  position: relative;
+  width: 250px;
+  height: 200px;
+  border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  box-shadow: 10px 11px 24px 0px rgba(0,0,0,0.75);
+  border-radius: 10px;
+}
+.bookTitle{
+
+  flex:1;
+  font-size: 30px;
+  border-bottom: 2px solid black;
 }
 .bookAuthor{
-  grid-column: 1 / 3;
+  flex:1;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 .bookPages{
-  grid-column: 1 / 3;
+  flex:1;
+font-size: 20px;
 }
 .bookIsReadBtn{
-  grid-column: 1 / 3;
+
   height: 50px;
   background-color: green;
 }
@@ -24,31 +63,83 @@
   background-color: orange;
 }
 .deleteBookBtn{
-  grid-column: 1 / 3;
-  height: 50px;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 40px;
+  height: 40px;
   background-color: red;
+  border-radius: 5px;
+  text-align: center;
+  transition: 0.2s;
+  font-size: 35px;
 }
-.priorityContainer{
+.deleteBookBtn:hover{
+  transform: scale(1.1);
+}
+.addBookModalContainer{
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0.7);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+}
+.addBookModalForm{
+  position: relative;
+  width: 400px;
+  height: 500px;
+  border: 5px solid black;
+  background: teal;
+  text-align: center;
   display: flex;
-  justify-self: flex-end;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 10px;
 }
-.priorityBox{
-  border: 1px solid black;
-  width: 20px;
-  height: 20px;
-}
-.pB1Active{
+.cancelBtn{
   background-color: red;
+  position: relative;
+  text-align: center;
+  bottom: 60%;
+  left: 91%;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
 }
-.pB2Active{
-  background-color: red;
+.modalAddBook{
+  text-align: center;
+  background: green;
+  color: white;
 }
-.pB3Active{
-  background-color: red;
+.modalTitle{
+  background-color: white;
+  font-size: 30px;
+  margin: 5px
 }
-.true{
-  background-color: green;
+.modalAuthor{
+  background-color: white;
+  font-size: 30px;
+  margin: 5px
 }
-.false{
-  background-color:red ;
+.modalPages{
+  background-color: white;
+  font-size: 30px;
+  margin: 5px
+}
+.modalSelect{
+  background-color: white;
+  font-size: 30px;
+  margin: 5px
+}
+.modalFormTitle{
+  font-size: 40px;
+  margin: 20px 0px 20px 0px;
+}
+.modalAddBook:hover{
+  border: 2px solid green;
+  color: green;
+  background-color: white;
 }
